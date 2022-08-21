@@ -187,7 +187,11 @@ contract OddEvenGame {
     }
 
     function getLastGameIndex() public view returns (uint256) {
-        return games.length - 1;
+        if (games.length == 0) {
+            return 0;
+        } else {
+            return games.length - 1;
+        }
     }
 
     modifier onlyOwner() {
